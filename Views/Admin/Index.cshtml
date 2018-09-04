@@ -57,9 +57,10 @@
                 }
                 <td>@guest.Comments</td>
                 <td><form class="ui form" asp-action="DeleteGuest">
+                    <a asp-action="Edit" asp-route-id="@guest.Id" class="ui primary button">Edit</a>
                     <input type="hidden" value="@guest.Id" name="id" />
                     <button class="ui red button" type="submit">Delete</button>
-                    </form>
+                </form>
                 </td>
             </tr>
         }
