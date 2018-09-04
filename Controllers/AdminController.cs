@@ -33,5 +33,14 @@ namespace MyWedding.Controllers
 
             return View("Index", _dbContext.Guests.ToList());
         }
+
+        [HttpPost]
+        public IActionResult DeleteGuest([FromForm] int id)
+        {
+            var guest = _dbContext.Guests.FirstOrDefault(x => x.Id == id);
+            _dbContext.Guests.Remove(guest);
+            _dbContext.SaveChanges();
+            return View("Index", _dbContext.Guests.ToList());
+        }
     }
 }

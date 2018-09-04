@@ -13,6 +13,7 @@
     <button class="ui primary button" type="submit">Save</button>
 </form>
 
+
 <table class="ui celled table">
     <thead>
         <tr>
@@ -55,6 +56,11 @@
                     <td></td>
                 }
                 <td>@guest.Comments</td>
+                <td><form class="ui form" asp-action="DeleteGuest">
+                    <input type="hidden" value="@guest.Id" name="id" />
+                    <button class="ui red button" type="submit">Delete</button>
+                    </form>
+                </td>
             </tr>
         }
 
